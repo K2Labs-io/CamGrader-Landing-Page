@@ -59,7 +59,7 @@
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD",
-          "description": "Free to download. Includes 50 scans per month; a paid plan removes the monthly scan limit."
+          "description": "Free to try, no account needed: 25 scans over 7 days. Create a free account for 50 scans per month, or subscribe for unlimited."
         }
       },
       {
@@ -136,9 +136,6 @@
   <script src="js/consent.js"></script>
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/main.css">
 
@@ -417,7 +414,8 @@
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
         <a href="support">Support</a>
-        <a href="contact" class="nav-cta">Get CamGrader</a>
+        <a href="book-a-demo" class="nav-cta-outline">Book a Demo</a>
+        <a href="contact" class="nav-cta js-get-camgrader">Get CamGrader</a>
       </div>
       <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -430,7 +428,8 @@
     <a href="#pricing">Pricing</a>
     <a href="#faq">FAQ</a>
     <a href="support">Support</a>
-    <a href="contact" class="nav-cta">Get CamGrader</a>
+    <a href="book-a-demo" class="nav-cta-outline">Book a Demo</a>
+    <a href="contact" class="nav-cta js-get-camgrader">Get CamGrader</a>
   </nav>
 </header>
 
@@ -447,7 +446,7 @@
     <h1 id="hero-heading" class="display-1">Paper tests.<br>Graded in seconds.</h1>
     <p class="hero-sub">Grade multiple-choice tests with your phone. Scan the answer key, scan your students' sheets, and CamGrader does the rest.</p>
     <div class="hero-ctas">
-      <a href="contact" class="btn btn-primary-light">Get CamGrader</a>
+      <a href="contact" class="btn btn-primary-light js-get-camgrader">Get CamGrader</a>
       <a href="#how-it-works" class="btn btn-outline-light" style="font-size:15px;padding:16px 28px;">See how it works</a>
     </div>
   </div>
@@ -620,22 +619,24 @@
       <div class="pricing-card">
         <div class="pricing-tier">Free</div>
         <div class="pricing-price"><sup>$</sup>0</div>
-        <div class="pricing-period">always free</div>
+        <div class="pricing-period">with a free account</div>
         <ul class="pricing-features">
           <li><span class="check">✓</span> 50 scans per month</li>
           <li><span class="check">✓</span> On-device storage only</li>
           <li><span class="check">✓</span> CSV export</li>
           <li><span class="check">✓</span> Fully offline</li>
         </ul>
-        <a href="contact" class="btn btn-outline" style="width:100%;text-align:center;">Get CamGrader</a>
+        <a href="contact" class="btn btn-outline js-get-camgrader" style="width:100%;text-align:center;">Get CamGrader</a>
+        <p style="text-align:center;font-size:12px;color:var(--text-muted, #767676);margin-top:10px;">No account needed: try 25 scans over 7 days first.</p>
       </div>
 
       <!-- Personal (featured) -->
       <div class="pricing-card pricing-card--featured">
         <div class="pricing-badge">Most Popular</div>
         <div class="pricing-tier">Personal</div>
-        <div class="pricing-price"><sup>$</sup>72</div>
-        <div class="pricing-period">per year &nbsp;·&nbsp; or $9.99/month</div>
+        <div class="pricing-price"><sup>$</sup>9.99</div>
+        <div class="pricing-period">per month</div>
+        <div class="pricing-period" style="margin-top:-16px;font-size:12px;">or $72/year <span style="color:var(--interactive);font-weight:700;">(save 40%)</span></div>
         <ul class="pricing-features">
           <li><span class="check">✓</span> Unlimited scans</li>
           <li><span class="check">✓</span> Online backups</li>
@@ -644,6 +645,7 @@
           <li><span class="check">✓</span> Priority support</li>
         </ul>
         <a href="account/create" class="btn btn-primary" style="width:100%;text-align:center;">Get Personal</a>
+        <p style="text-align:center;font-size:12px;color:var(--text-muted, #767676);margin-top:10px;">Renews automatically at $9.99/month (or $72/year) until cancelled.</p>
       </div>
 
       <!-- Institutional -->
@@ -743,11 +745,11 @@
     <h2 id="cta-heading" class="display-1" style="margin-bottom:20px;">Start grading smarter today.</h2>
     <p class="body-lg" style="max-width:480px;margin:0 auto 40px;">Free to download. Free to start. No credit card required.</p>
     <div class="final-cta-btns">
-      <a href="contact" class="store-badge">
+      <a href="contact" class="store-badge js-get-camgrader">
         <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
         App Store
       </a>
-      <a href="contact" class="store-badge">
+      <a href="contact" class="store-badge js-get-camgrader">
         <svg viewBox="0 0 24 24"><path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg>
         Play Store
       </a>
@@ -820,6 +822,8 @@
 </footer>
 
 <script src="js/nav.js"></script>
+<script src="js/qrcode.js"></script>
+<script src="js/get-camgrader.js"></script>
 <script>
 (function () {
   var btn = document.getElementById('demoPlayBtn');

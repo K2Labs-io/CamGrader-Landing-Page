@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Refund Policy | CamGrader</title>
-  <meta name="description" content="CamGrader Refund Policy.">
-  <link rel="canonical" href="https://camgrader.com/refunds">
+  <title>Book a Demo | CamGrader</title>
+  <meta name="description" content="Book a live demo of CamGrader with our team.">
+  <link rel="canonical" href="https://camgrader.com/book-a-demo">
 
   <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
@@ -15,6 +15,61 @@
   <script src="../js/consent.js"></script>
 
   <link rel="stylesheet" href="../css/main.css">
+
+  <style>
+    .demo-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 56px 40px 96px;
+    }
+    .demo-heading {
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+    .demo-sub {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+    .demo-embed-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+      margin-top: 36px;
+      min-height: 480px;
+    }
+    /* Google Calendar's appointment-schedule embed is a fixed-height iframe;
+       this wrapper just gives it consistent spacing inside the card. */
+    .demo-embed-card iframe {
+      width: 100%;
+      min-height: 480px;
+      border: 0;
+      border-radius: var(--radius-md);
+    }
+    .demo-embed-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 432px;
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-md);
+      color: var(--text-secondary);
+      font-size: 14px;
+      text-align: center;
+      padding: 24px;
+      line-height: 1.6;
+    }
+    @media (max-width: 600px) {
+      .demo-wrap { padding: 32px 20px 64px; }
+      .demo-embed-card { padding: 16px; }
+    }
+  </style>
 </head>
 <body class="util-body">
 
@@ -24,27 +79,19 @@
       <img src="../images/logo.png" alt="CamGrader">
       <span class="util-topbar-name">CamGrader</span>
     </a>
-    <a href="../" class="util-topbar-back">← Back</a>
+    <a href="../" class="util-topbar-back">← Back to home</a>
   </div>
 </div>
 
-<div class="util-wrap">
-  <h1 class="util-h1">Refund Policy</h1>
-  <p class="util-meta">Effective date: September 21, 2026 &nbsp;·&nbsp; Last updated: September 21, 2026</p>
+<div class="demo-wrap">
+  <h1 class="demo-heading">Book a demo</h1>
+  <p class="demo-sub">Pick a time that works for you and we'll walk you through CamGrader live.</p>
 
-  <p class="util-p">CamGrader Personal subscriptions are billed by K2 Labs through Stripe.</p>
-
-  <h2 class="util-h2">Cancelling Your Subscription</h2>
-  <p class="util-p">You can cancel anytime from your <a href="https://billing.stripe.com/p/login/9B600j5l45ha6m1h2SeAg01" class="util-a">account management page</a>. Log in with the email address you used at checkout. Your subscription stays active through the end of your current billing period, and you will not be charged again after that.</p>
-
-  <h2 class="util-h2">Refunds</h2>
-  <p class="util-p">We do not offer refunds for unused time in a billing period. Because cancelling keeps your access active through the period you already paid for, there is no partial-period charge left to refund, whether you cancel right away or close to your renewal date.</p>
-
-  <h2 class="util-h2">Billing Errors</h2>
-  <p class="util-p">If you believe you were charged incorrectly, contact us at <a href="mailto:hello@camgrader.com" class="util-a">hello@camgrader.com</a> and we will investigate and correct any error promptly.</p>
-
-  <h2 class="util-h2">Questions</h2>
-  <p class="util-p">Email us at <a href="mailto:hello@camgrader.com" class="util-a">hello@camgrader.com</a> and we'll get back to you within 1 to 2 business days.</p>
+  <div class="demo-embed-card">
+    <!-- Google Calendar Appointment Scheduling begin -->
+    <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0t4cD3QX15CzCxXVOvoAUscQIFtreBk7yl_Emo0ORFzqZ-IQ_tfpf84c6IwOJ9c4-UtsZym5iS?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+    <!-- end Google Calendar Appointment Scheduling -->
+  </div>
 </div>
 
 <footer class="site-footer" role="contentinfo">

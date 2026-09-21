@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get CamGrader | CamGrader</title>
+  <meta name="description" content="Scan the QR code to get CamGrader on your phone.">
+  <link rel="canonical" href="https://camgrader.com/get-camgrader">
+  <meta name="robots" content="noindex">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+  <link rel="manifest" href="../images/site.webmanifest">
+
+  <script src="../js/consent.js"></script>
+
+  <link rel="stylesheet" href="../css/main.css">
+
+  <style>
+    .qr-wrap {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 56px 40px 96px;
+      text-align: center;
+    }
+    .qr-heading {
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+    .qr-sub {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+    .qr-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 32px;
+      box-shadow: var(--shadow-card);
+      margin-top: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .qr-card svg {
+      width: 100%;
+      max-width: 260px;
+      height: auto;
+    }
+    .qr-fallback-link {
+      display: inline-block;
+      margin-top: 24px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--interactive);
+    }
+    @media (max-width: 600px) {
+      .qr-wrap { padding: 32px 20px 64px; }
+      .qr-card { padding: 20px; }
+    }
+  </style>
+</head>
+<body class="util-body">
+
+<div class="util-topbar">
+  <div class="util-topbar-inner">
+    <a href="../" class="util-topbar-brand">
+      <img src="../images/logo.png" alt="CamGrader">
+      <span class="util-topbar-name">CamGrader</span>
+    </a>
+    <a href="../" class="util-topbar-back">← Back to home</a>
+  </div>
+</div>
+
+<div class="qr-wrap">
+  <h1 class="qr-heading">Scan to get CamGrader</h1>
+  <p class="qr-sub">Open your phone's camera and point it at the code below.</p>
+
+  <div class="qr-card" id="qrCard"></div>
+
+  <a href="../contact" class="qr-fallback-link">Trouble scanning? Contact us</a>
+</div>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <img src="../images/logo.png" alt="CamGrader">
+          <span class="footer-brand-name">CamGrader</span>
+        </div>
+        <p class="footer-tagline">The fastest way to grade paper tests. Built for teachers.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Product</div>
+        <ul class="footer-links">
+          <li><a href="../#how-it-works">How It Works</a></li>
+          <li><a href="../#features">Features</a></li>
+          <li><a href="../#pricing">Pricing</a></li>
+          <li><a href="../keygen">Key Generator</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Support</div>
+        <ul class="footer-links">
+          <li><a href="../support">Help Center</a></li>
+          <li><a href="../contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Legal</div>
+        <ul class="footer-links">
+          <li><a href="../privacy">Privacy Policy</a></li>
+          <li><a href="../terms">Terms of Service</a></li>
+          <li><a href="../refunds">Refund Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <div class="footer-bottom">
+      <span class="footer-bottom-copy">&copy; 2026 CamGrader. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/nav.js"></script>
+<script src="../js/qrcode.js"></script>
+<script src="../js/get-camgrader.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var platform = CamGraderStore.detectPlatform();
+
+  if (platform !== 'desktop') {
+    // Reached this page on a phone (only possible by scanning the QR code,
+    // since the site's own "Get CamGrader" links send phones straight to
+    // the store). Send it straight to the right store, or to Contact if
+    // that store link isn't live yet.
+    var storeUrl = CamGraderStore.storeUrlFor(platform);
+    window.location.replace(storeUrl || '../contact');
+    return;
+  }
+
+  // Desktop: render the QR code encoding this page's own canonical URL, so
+  // scanning it on a phone re-runs this same logic and lands on the store.
+  var qr = qrcode(0, 'M');
+  qr.addData('https://camgrader.com/get-camgrader');
+  qr.make();
+  document.getElementById('qrCard').innerHTML = qr.createSvgTag(6, 0);
+})();
+</script>
+</body>
+</html>
