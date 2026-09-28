@@ -37,6 +37,20 @@
   <h2 class="util-h2">Lighting recommendations</h2>
   <p class="util-p">CamGrader reads bubble sheets using your device's camera, so lighting makes a real difference in accuracy:</p>
   <p class="util-p">Scan in a well-lit room with even, diffuse light - daylight near a window or standard classroom overhead lighting both work well. Avoid harsh, directional light (like a single desk lamp) that casts a shadow across the sheet.</p>
+  <p class="util-p"><strong>Check your corners, not just the overall light.</strong> A shadow doesn't need to cover the whole sheet to cause a problem - even a shadow over just one corner (from your hand, the phone itself, or a nearby light source) is often enough to trigger "One or more corner markers were difficult to detect," since CamGrader needs a clear view of all four corners to align the sheet. If you see that message, tap the scan thumbnail on a result's page to zoom in and check each corner individually before assuming the room is too dark - see the example below.</p>
+  <img class="tut-shot tut-shot-full" src="../../../images/support/quick-start/scan-your-first-test/04-corner-shadow-preview.webp" alt="Zoomed scan image from a Results page, showing all four corner markers - check each one individually when a corner is hard to detect">
+
+  <hr class="tut-divider">
+
+  <h2 class="util-h2">If corners can't be detected</h2>
+  <p class="util-p">If CamGrader can't get a clear fix on all four corner markers, a <strong>Corner Detection Issue</strong> dialog appears right after the shutter fires, with two options: <strong>Rescan</strong> (deletes this attempt so you can try again - recommended whenever the student is still there) or <strong>Keep Results</strong> (saves it anyway, for example if the sheet is damaged or the student has already left).</p>
+  <img class="tut-shot tut-shot-full" src="../../../images/support/quick-start/scan-your-first-test/05-corner-dialog.webp" alt="Corner Detection Issue dialog with Rescan and Keep Results options, shown over a dimmed scan preview">
+
+  <p class="util-p">Choosing <strong>Keep Results</strong> flags that student's result: a warning banner appears at the top of their Results page ("Corner markers were hard to detect - results may have alignment errors. Consider rescanning."), and the score is shown in red as a reminder to double-check it.</p>
+  <img class="tut-shot tut-shot-full" src="../../../images/support/quick-start/scan-your-first-test/06-flagged-result.webp" alt="Results page for a flagged scan showing the corner-detection warning banner above a score shown in red">
+
+  <p class="util-p">Flagged results are also easy to find later from the test's student list - look for the red marker on the result thumbnail.</p>
+  <img class="tut-shot tut-shot-full" src="../../../images/support/quick-start/scan-your-first-test/07-flagged-in-list.webp" alt="Test detail screen's student list with one result marked by a red corner-detection flag">
 
   <hr class="tut-divider">
 
