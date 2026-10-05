@@ -123,6 +123,12 @@
         </div>
 
         <div class="form-group">
+          <label class="form-label" for="phone">Phone number</label>
+          <input class="form-input" type="tel" id="phone" name="phone"
+                 autocomplete="tel" placeholder="(555) 123-4567" required>
+        </div>
+
+        <div class="form-group">
           <label class="form-label" for="topic">What can we help with?</label>
           <select class="form-input" id="topic" name="topic" required>
             <option value="" disabled selected>Select a topic</option>
@@ -304,6 +310,7 @@
     var data = {
       name:    document.getElementById('fullName').value.trim(),
       email:   document.getElementById('email').value.trim(),
+      phone:   document.getElementById('phone').value.trim(),
       topic:   document.getElementById('topic').value,
       message: document.getElementById('message').value.trim()
     };
