@@ -593,6 +593,69 @@ header {
   text-align: center;
 }
 
+.billing-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 24px;
+  padding: 4px;
+  background: var(--panel);
+  border-radius: 999px;
+}
+.billing-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 9px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+.billing-toggle-btn.is-active {
+  background: var(--white);
+  color: var(--text-primary);
+  box-shadow: 0 2px 8px rgba(62,42,82,0.14);
+}
+.billing-save-chip {
+  background: var(--panel-2);
+  color: var(--interactive);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  transition: background 0.18s, color 0.18s;
+}
+.billing-toggle-btn.is-active .billing-save-chip {
+  background: var(--interactive);
+  color: var(--cream);
+}
+
+.price-monthly, .price-annual {
+  animation: pricing-fade 0.18s ease;
+}
+@keyframes pricing-fade {
+  from { opacity: 0; transform: translateY(2px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.pricing-price-strike {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-decoration: line-through;
+  margin-right: 8px;
+}
+.pricing-save {
+  color: var(--interactive);
+  font-weight: 700;
+}
+
 /* ── ===========================
    FAQ ACCORDION
    =========================== ── */

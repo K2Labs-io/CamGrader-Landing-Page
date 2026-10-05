@@ -612,6 +612,10 @@
       <span class="eyebrow">Simple pricing</span>
       <h2 id="pricing-heading" class="heading-2">Start free. Upgrade when you're ready.</h2>
       <p class="body-lg" style="margin-top:16px;">No hidden fees. Cancel anytime.</p>
+      <div class="billing-toggle" role="group" aria-label="Billing period">
+        <button type="button" class="billing-toggle-btn is-active" data-billing="monthly">Monthly</button>
+        <button type="button" class="billing-toggle-btn" data-billing="annual">Annual <span class="billing-save-chip">Save $48/yr</span></button>
+      </div>
     </div>
     <div class="pricing-grid">
 
@@ -634,14 +638,20 @@
       <div class="pricing-card pricing-card--featured">
         <div class="pricing-badge">Most Popular</div>
         <div class="pricing-tier">Personal</div>
-        <div class="pricing-price"><sup>$</sup>9.99</div>
-        <div class="pricing-period">per month</div>
-        <div class="pricing-period" style="margin-top:-14px;font-size:15px;">or $72/year <span style="color:var(--interactive);font-weight:700;">(save 40%)</span></div>
+
+        <div class="price-monthly" data-billing-view="monthly">
+          <div class="pricing-price"><sup>$</sup>9.99</div>
+          <div class="pricing-period">per month</div>
+        </div>
+        <div class="price-annual" data-billing-view="annual" hidden>
+          <div class="pricing-price"><span class="pricing-price-strike">$9.99</span><sup>$</sup>6</div>
+          <div class="pricing-period">per month, billed $72/year <span class="pricing-save">(save $48/yr)</span></div>
+        </div>
+
         <ul class="pricing-features">
+          <li><span class="check">✓</span> Everything in Free, plus:</li>
           <li><span class="check">✓</span> Unlimited scans</li>
           <li><span class="check">✓</span> Online backups</li>
-          <li><span class="check">✓</span> CSV export</li>
-          <li><span class="check">✓</span> Fully offline</li>
           <li><span class="check">✓</span> Priority support</li>
         </ul>
         <a href="account/create" class="btn btn-primary" style="width:100%;text-align:center;">Get Personal</a>
@@ -839,6 +849,21 @@
     player.innerHTML = '';
     player.appendChild(iframe);
   }, { once: true });
+})();
+</script>
+<script>
+(function () {
+  var toggleBtns = document.querySelectorAll('.billing-toggle-btn');
+  if (!toggleBtns.length) return;
+  toggleBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var billing = btn.getAttribute('data-billing');
+      toggleBtns.forEach(function (b) { b.classList.toggle('is-active', b === btn); });
+      document.querySelectorAll('[data-billing-view]').forEach(function (el) {
+        el.hidden = el.getAttribute('data-billing-view') !== billing;
+      });
+    });
+  });
 })();
 </script>
 </body>
