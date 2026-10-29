@@ -1,12 +1,13 @@
 // Routes "Get CamGrader" / App Store / Play Store links to the right place
 // for the visitor's device, and powers the QR fallback page for desktop.
 //
-// TODO: once CamGrader is live on each store, replace these two placeholder
-// values with the real listing URLs (leave the quotes, just swap what's
-// inside them). Until then this intentionally does nothing extra: iOS and
-// Android visitors fall through to the link's normal href (the contact
-// page), same as today, and desktop visitors get the QR page.
-var CAMGRADER_APP_STORE_URL  = null; // e.g. 'https://apps.apple.com/app/idXXXXXXXXXX'
+// CamGrader is live on the App Store as of Oct 2026 (see CAMGRADER_APP_STORE_URL
+// below). TODO: once CamGrader is live on Google Play too, replace the
+// placeholder below with the real Play Store listing URL (leave the quotes,
+// just swap what's inside them). Until then Android visitors fall through
+// to the link's normal href (the contact page), same as today, and desktop
+// visitors get the QR page.
+var CAMGRADER_APP_STORE_URL  = 'https://apps.apple.com/app/id6770093651';
 var CAMGRADER_PLAY_STORE_URL = null; // e.g. 'https://play.google.com/store/apps/details?id=com.camgrader.app'
 
 var CamGraderStore = (function () {
