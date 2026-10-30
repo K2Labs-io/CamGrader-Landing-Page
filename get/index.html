@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get CamGrader | CamGrader</title>
+  <meta name="description" content="Get CamGrader on your phone.">
+  <link rel="canonical" href="https://camgrader.com/get">
+  <meta name="robots" content="noindex">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+  <link rel="manifest" href="../images/site.webmanifest">
+
+  <script src="../js/consent.js"></script>
+
+  <link rel="stylesheet" href="../css/main.css">
+
+  <style>
+    .get-wrap {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 96px 40px;
+      text-align: center;
+    }
+    .get-heading {
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+    .get-sub {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .get-fallback-link {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--interactive);
+    }
+  </style>
+</head>
+<body class="util-body">
+
+<div class="util-topbar">
+  <div class="util-topbar-inner">
+    <a href="../" class="util-topbar-brand">
+      <img src="../images/logo.png" alt="CamGrader">
+      <span class="util-topbar-name">CamGrader</span>
+    </a>
+    <a href="../" class="util-topbar-back">← Back to home</a>
+  </div>
+</div>
+
+<div class="get-wrap">
+  <h1 class="get-heading">Taking you to CamGrader&hellip;</h1>
+  <p class="get-sub">
+    <a href="../get-camgrader" id="get-fallback-link" class="get-fallback-link">
+      Click here if you're not redirected automatically.
+    </a>
+  </p>
+</div>
+
+<script src="../js/get-camgrader.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  // /get is the short, shareable version of the site's own "Get CamGrader"
+  // button - same detection, same destinations: a phone goes straight to
+  // its store, desktop (or a phone whose store link isn't live yet) falls
+  // through to the QR page, exactly like that button's desktop behavior.
+  var platform = CamGraderStore.detectPlatform();
+  var storeUrl = CamGraderStore.storeUrlFor(platform);
+  var dest = storeUrl || '../get-camgrader';
+
+  document.getElementById('get-fallback-link').href = dest;
+  window.location.replace(dest);
+})();
+</script>
+</body>
+</html>
