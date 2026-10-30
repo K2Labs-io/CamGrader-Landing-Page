@@ -54,7 +54,7 @@
 <div class="get-wrap">
   <h1 class="get-heading">Get CamGrader</h1>
   <p class="get-sub">Tap below to continue.</p>
-  <a href="../get-camgrader" id="get-cta" class="btn btn-primary-light">Continue</a>
+  <a href="../get-camgrader" id="get-cta" class="btn btn-primary-light" style="display:none;">Continue</a>
 </div>
 
 <script src="../js/get-camgrader.js"></script>
@@ -62,31 +62,31 @@
 (function () {
   'use strict';
 
-  // One tap, same as the site's own "Get CamGrader" button - and
-  // deliberately not an automatic redirect on page load. Android only
-  // hands a navigation off to the Play Store app when it happens inside a
-  // real click/tap; a script-triggered redirect with no gesture behind it
-  // falls back to the Play Store's web page in the browser instead, which
-  // is exactly the bug this page is fixing. The button's label and
-  // destination are set up front below, but the actual navigation only
-  // ever happens from its own click handler, same as the main site button.
-  var cta      = document.getElementById('get-cta');
   var platform = CamGraderStore.detectPlatform();
   var storeUrl = CamGraderStore.storeUrlFor(platform);
-  var dest     = storeUrl || '../get-camgrader';
 
-  cta.href = dest;
-  if (platform === 'ios') {
-    cta.textContent = 'Download on the App Store';
-  } else if (platform === 'android') {
-    cta.textContent = 'Get it on Google Play';
-  } else {
-    cta.textContent = 'Show QR Code';
+  if (!storeUrl) {
+    // Desktop (or a phone whose store link isn't live yet) is just an
+    // ordinary page navigation to the QR fallback - no native app handoff
+    // is involved, so there's no reason to make anyone click first.
+    window.location.replace('../get-camgrader');
+    return;
   }
+
+  // iOS and Android only hand a navigation off to their native store app
+  // when it happens inside a real click/tap - a script-triggered redirect
+  // on page load doesn't count, and just falls back to the store's own web
+  // page in the browser instead. So here, unlike the desktop case above,
+  // the button stays, and the actual navigation only ever happens from its
+  // own click handler, same as the main site's "Get CamGrader" button.
+  var cta = document.getElementById('get-cta');
+  cta.href = storeUrl;
+  cta.textContent = platform === 'ios' ? 'Download on the App Store' : 'Get it on Google Play';
+  cta.style.display = 'inline-block';
 
   cta.addEventListener('click', function (e) {
     e.preventDefault();
-    window.location.href = dest;
+    window.location.href = storeUrl;
   });
 })();
 </script>
