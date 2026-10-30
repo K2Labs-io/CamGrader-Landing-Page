@@ -35,13 +35,7 @@
       font-size: 15px;
       color: var(--text-secondary);
       line-height: 1.6;
-    }
-    .get-fallback-link {
-      display: inline-block;
-      margin-top: 4px;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--interactive);
+      margin-bottom: 28px;
     }
   </style>
 </head>
@@ -58,12 +52,9 @@
 </div>
 
 <div class="get-wrap">
-  <h1 class="get-heading">Taking you to CamGrader&hellip;</h1>
-  <p class="get-sub">
-    <a href="../get-camgrader" id="get-fallback-link" class="get-fallback-link">
-      Click here if you're not redirected automatically.
-    </a>
-  </p>
+  <h1 class="get-heading">Get CamGrader</h1>
+  <p class="get-sub">Tap below to continue.</p>
+  <a href="../get-camgrader" id="get-cta" class="btn btn-primary-light">Continue</a>
 </div>
 
 <script src="../js/get-camgrader.js"></script>
@@ -71,16 +62,32 @@
 (function () {
   'use strict';
 
-  // /get is the short, shareable version of the site's own "Get CamGrader"
-  // button - same detection, same destinations: a phone goes straight to
-  // its store, desktop (or a phone whose store link isn't live yet) falls
-  // through to the QR page, exactly like that button's desktop behavior.
+  // One tap, same as the site's own "Get CamGrader" button - and
+  // deliberately not an automatic redirect on page load. Android only
+  // hands a navigation off to the Play Store app when it happens inside a
+  // real click/tap; a script-triggered redirect with no gesture behind it
+  // falls back to the Play Store's web page in the browser instead, which
+  // is exactly the bug this page is fixing. The button's label and
+  // destination are set up front below, but the actual navigation only
+  // ever happens from its own click handler, same as the main site button.
+  var cta      = document.getElementById('get-cta');
   var platform = CamGraderStore.detectPlatform();
   var storeUrl = CamGraderStore.storeUrlFor(platform);
-  var dest = storeUrl || '../get-camgrader';
+  var dest     = storeUrl || '../get-camgrader';
 
-  document.getElementById('get-fallback-link').href = dest;
-  window.location.replace(dest);
+  cta.href = dest;
+  if (platform === 'ios') {
+    cta.textContent = 'Download on the App Store';
+  } else if (platform === 'android') {
+    cta.textContent = 'Get it on Google Play';
+  } else {
+    cta.textContent = 'Show QR Code';
+  }
+
+  cta.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.location.href = dest;
+  });
 })();
 </script>
 </body>
