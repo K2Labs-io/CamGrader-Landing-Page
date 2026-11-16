@@ -84,7 +84,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
+  font-size: 100%; /* 16px by default, but still honors the visitor's own browser/OS text-size setting - a hardcoded px value here would silently override it */
 }
 
 body {
@@ -144,7 +144,7 @@ header {
   object-fit: contain;
 }
 .nav-brand-name {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 800;
   color: var(--cream);
   letter-spacing: -0.3px;
@@ -157,7 +157,7 @@ header {
   margin-left: auto;
 }
 .nav-links a {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   color: rgba(247,249,236,0.75);
   transition: color 0.18s;
@@ -171,7 +171,7 @@ header {
   background: var(--cream);
   color: var(--plum-dark) !important;
   border-radius: var(--radius-sm);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 700;
   transition: opacity 0.18s, transform 0.15s;
 }
@@ -185,7 +185,7 @@ header {
   color: var(--cream) !important;
   border: 1px solid rgba(247,249,236,0.35);
   border-radius: var(--radius-sm);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 700;
   transition: opacity 0.18s, transform 0.15s, border-color 0.18s;
 }
@@ -226,7 +226,7 @@ header {
 }
 .nav-mobile.open { display: flex; }
 .nav-mobile a {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   color: rgba(247,249,236,0.80);
   padding: 12px 0;
@@ -240,7 +240,7 @@ header {
   margin-top: 12px;
   justify-content: center;
   padding: 14px;
-  font-size: 15px;
+  font-size: 0.9375rem;
 }
 
 /* ── ===========================
@@ -267,7 +267,7 @@ header {
 
 .eyebrow {
   display: inline-block;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -277,7 +277,7 @@ header {
 .section--plum .eyebrow { color: rgba(247,249,236,0.60); }
 
 .display-1 {
-  font-size: clamp(38px, 5.5vw, 68px);
+  font-size: clamp(2.375rem, 5.5vw, 4.25rem);
   font-weight: 800;
   line-height: 1.08;
   letter-spacing: -1.5px;
@@ -285,7 +285,7 @@ header {
 }
 
 .heading-2 {
-  font-size: clamp(28px, 3.5vw, 44px);
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.8px;
@@ -294,7 +294,7 @@ header {
 .section--plum .heading-2 { color: var(--cream); }
 
 .heading-3 {
-  font-size: clamp(20px, 2.5vw, 28px);
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.3px;
@@ -302,14 +302,14 @@ header {
 }
 
 .body-lg {
-  font-size: clamp(16px, 1.6vw, 19px);
+  font-size: clamp(1rem, 1.6vw, 1.1875rem);
   line-height: 1.7;
   color: var(--text-secondary);
 }
 .section--plum .body-lg { color: rgba(247,249,236,0.75); }
 
 .body-sm {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: var(--text-secondary);
 }
@@ -326,7 +326,7 @@ header {
   padding: 16px 32px;
   border-radius: var(--radius-md);
   font-family: inherit;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
   border: none;
   cursor: pointer;
@@ -366,7 +366,7 @@ header {
 
 .btn-sm {
   padding: 11px 22px;
-  font-size: 14px;
+  font-size: 0.875rem;
   border-radius: var(--radius-sm);
 }
 
@@ -414,20 +414,20 @@ header {
   background: var(--plum-dark);
   color: var(--cream);
   border-radius: 50%;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 800;
   margin-bottom: 20px;
 }
 
 .step-title {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 10px;
 }
 
 .step-body {
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: var(--text-secondary);
   line-height: 1.65;
 }
@@ -471,7 +471,7 @@ header {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: var(--text-secondary);
 }
 .feature-list li::before {
@@ -485,7 +485,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 800;
   margin-top: 1px;
 }
@@ -526,7 +526,7 @@ header {
   transform: translateX(-50%);
   background: var(--plum-dark);
   color: var(--cream);
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 800;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -535,7 +535,7 @@ header {
 }
 
 .pricing-tier {
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -544,7 +544,7 @@ header {
 }
 
 .pricing-price {
-  font-size: 44px;
+  font-size: 2.75rem;
   font-weight: 800;
   color: var(--text-primary);
   letter-spacing: -1px;
@@ -552,13 +552,13 @@ header {
   margin-bottom: 4px;
 }
 .pricing-price sup {
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: 700;
   vertical-align: super;
   letter-spacing: 0;
 }
 .pricing-period {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--text-secondary);
   margin-bottom: 24px;
 }
@@ -575,19 +575,19 @@ header {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--text-secondary);
 }
 .pricing-features li .check {
   flex-shrink: 0;
   color: var(--plum-mid);
   font-weight: 800;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.4;
 }
 
 .pricing-note {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--text-secondary);
   margin-top: 12px;
   text-align: center;
@@ -609,7 +609,7 @@ header {
   border: none;
   background: transparent;
   color: var(--text-secondary);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 700;
   padding: 9px 18px;
   border-radius: 999px;
@@ -624,7 +624,7 @@ header {
 .billing-save-chip {
   background: var(--panel-2);
   color: var(--interactive);
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 800;
   letter-spacing: 0.3px;
   padding: 2px 8px;
@@ -645,7 +645,7 @@ header {
 }
 
 .pricing-price-strike {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-muted);
   text-decoration: line-through;
@@ -686,7 +686,7 @@ header {
   cursor: pointer;
   text-align: left;
   font-family: inherit;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--text-primary);
   transition: background 0.18s;
@@ -706,7 +706,7 @@ header {
   display: none;
   padding: 0 24px 20px;
   background: var(--white);
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: var(--text-secondary);
   line-height: 1.7;
 }
@@ -781,19 +781,19 @@ header {
   object-fit: contain;
 }
 .footer-brand-name {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 800;
   color: var(--cream);
 }
 .footer-tagline {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: rgba(247,249,236,0.55);
   line-height: 1.6;
   max-width: 240px;
 }
 
 .footer-col-title {
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -808,7 +808,7 @@ header {
   gap: 10px;
 }
 .footer-links a {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: rgba(247,249,236,0.65);
   transition: color 0.18s;
 }
@@ -852,7 +852,7 @@ header {
   flex-wrap: wrap;
 }
 .footer-bottom-copy {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: rgba(247,249,236,0.40);
 }
 .footer-bottom-links {
@@ -860,7 +860,7 @@ header {
   gap: 20px;
 }
 .footer-bottom-links a {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: rgba(247,249,236,0.40);
   transition: color 0.18s;
 }
@@ -908,13 +908,13 @@ header {
   object-fit: contain;
 }
 .util-topbar-name {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 800;
   color: var(--cream);
 }
 .util-topbar-back {
   margin-left: auto;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   color: rgba(247,249,236,0.70);
   text-decoration: none;
@@ -929,14 +929,14 @@ header {
 }
 
 .util-h1 {
-  font-size: clamp(24px, 3vw, 36px);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
   font-weight: 800;
   color: var(--text-primary);
   letter-spacing: -0.5px;
   margin-bottom: 6px;
 }
 .util-meta {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--text-secondary);
   margin-bottom: 48px;
 }
@@ -949,13 +949,13 @@ header {
   color: var(--plum-mid);
 }
 .util-h2 {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 700;
   color: var(--text-primary);
   margin: 40px 0 10px;
 }
 .util-p {
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: var(--text-secondary);
   line-height: 1.75;
   margin-bottom: 16px;
@@ -965,7 +965,7 @@ header {
   padding-left: 22px;
 }
 .util-ul li {
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: var(--text-secondary);
   line-height: 1.75;
   margin-bottom: 6px;
@@ -1001,7 +1001,7 @@ header {
 }
 .form-label {
   display: block;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 6px;
@@ -1012,7 +1012,7 @@ header {
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   font-family: inherit;
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: var(--text-primary);
   background: var(--white);
   outline: none;
@@ -1045,18 +1045,18 @@ textarea.form-input { resize: vertical; min-height: 140px; line-height: 1.6; }
   padding: 40px 24px;
 }
 .system-icon {
-  font-size: 64px;
+  font-size: 4rem;
   margin-bottom: 24px;
 }
 .system-h1 {
-  font-size: clamp(24px, 3.5vw, 40px);
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
   font-weight: 800;
   color: var(--text-primary);
   letter-spacing: -0.5px;
   margin-bottom: 12px;
 }
 .system-p {
-  font-size: 17px;
+  font-size: 1.0625rem;
   color: var(--text-secondary);
   max-width: 440px;
   margin: 0 auto 32px;
@@ -1119,7 +1119,7 @@ textarea.form-input { resize: vertical; min-height: 140px; line-height: 1.6; }
 }
 .consent-banner-text {
   margin: 0;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.5;
   color: var(--cream);
   max-width: 640px;
@@ -1136,7 +1136,7 @@ textarea.form-input { resize: vertical; min-height: 140px; line-height: 1.6; }
 }
 .consent-btn {
   font-family: inherit;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   padding: 10px 20px;
   border-radius: var(--radius-sm);
@@ -1282,7 +1282,7 @@ textarea.form-input { resize: vertical; min-height: 140px; line-height: 1.6; }
   border: none;
   background: var(--white);
   color: var(--text-primary);
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1;
   cursor: pointer;
   display: flex;

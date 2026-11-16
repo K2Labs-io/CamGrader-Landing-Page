@@ -33,7 +33,7 @@
 
     html, body {
       font-family: 'Manrope', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-size: 16px;
+      font-size: 1rem;
       line-height: 1.6;
       background: var(--cream);
       color: var(--plum-dark);
@@ -53,14 +53,14 @@
 
     /* ── Section headers ── */
     .page-title {
-      font-size: 22px;
+      font-size: 1.375rem;
       font-weight: 800;
       letter-spacing: -0.2px;
       color: var(--plum-dark);
       margin-bottom: 6px;
     }
     .page-sub {
-      font-size: 14px;
+      font-size: 0.875rem;
       color: var(--plum-light);
       margin-bottom: 32px;
     }
@@ -74,7 +74,7 @@
       margin-bottom: 20px;
     }
     .card-title {
-      font-size: 11px;
+      font-size: 0.6875rem;
       font-weight: 700;
       letter-spacing: 1.5px;
       color: var(--plum-light);
@@ -97,7 +97,7 @@
       border: none;
       cursor: pointer;
       font-family: inherit;
-      font-size: 14px;
+      font-size: 0.875rem;
       font-weight: 600;
       color: var(--plum-light);
       transition: background 0.15s, color 0.15s;
@@ -120,7 +120,7 @@
       border-radius: 10px;
       padding: 14px 16px;
       font-family: 'Manrope', monospace;
-      font-size: 14px;
+      font-size: 0.875rem;
       color: var(--plum-dark);
       resize: vertical;
       outline: none;
@@ -144,17 +144,17 @@
       background: var(--accent-light);
     }
     .upload-area input[type="file"] { display: none; }
-    .upload-icon { font-size: 32px; margin-bottom: 10px; }
+    .upload-icon { font-size: 2rem; margin-bottom: 10px; }
     .upload-label {
-      font-size: 15px;
+      font-size: 0.9375rem;
       font-weight: 600;
       color: var(--plum-dark);
       margin-bottom: 4px;
     }
-    .upload-hint { font-size: 13px; color: var(--plum-light); }
+    .upload-hint { font-size: 0.8125rem; color: var(--plum-light); }
     .file-chosen {
       margin-top: 10px;
-      font-size: 13px;
+      font-size: 0.8125rem;
       font-weight: 600;
       color: var(--plum-mid);
     }
@@ -170,7 +170,7 @@
       border-radius: 8px;
       background: white;
       font-family: inherit;
-      font-size: 13px;
+      font-size: 0.8125rem;
       font-weight: 600;
       color: var(--plum-mid);
       text-decoration: none;
@@ -188,7 +188,7 @@
       flex-wrap: wrap;
     }
     .format-label {
-      font-size: 14px;
+      font-size: 0.875rem;
       font-weight: 600;
       color: var(--plum-dark);
       white-space: nowrap;
@@ -200,7 +200,7 @@
       border: 1px solid var(--border);
       background: white;
       font-family: inherit;
-      font-size: 14px;
+      font-size: 0.875rem;
       font-weight: 700;
       color: var(--plum-light);
       cursor: pointer;
@@ -219,7 +219,7 @@
       border: 1px solid #fca5a5;
       border-radius: 10px;
       padding: 14px 16px;
-      font-size: 14px;
+      font-size: 0.875rem;
       color: #991b1b;
       margin-bottom: 20px;
       display: none;
@@ -238,7 +238,7 @@
       border-radius: 10px;
       border: none;
       font-family: inherit;
-      font-size: 15px;
+      font-size: 0.9375rem;
       font-weight: 700;
       cursor: pointer;
       transition: opacity 0.15s, transform 0.1s;
@@ -267,7 +267,7 @@
       gap: 12px;
     }
     .preview-count {
-      font-size: 13px;
+      font-size: 0.8125rem;
       color: var(--plum-light);
     }
 
@@ -285,13 +285,13 @@
       text-align: center;
     }
     .key-cell-q {
-      font-size: 11px;
+      font-size: 0.6875rem;
       font-weight: 600;
       color: var(--plum-light);
       margin-bottom: 4px;
     }
     .key-cell-a {
-      font-size: 20px;
+      font-size: 1.25rem;
       font-weight: 800;
       color: var(--plum-mid);
     }
@@ -299,7 +299,7 @@
       background: #fef2f2;
       border-color: #fca5a5;
     }
-    .key-cell.missing .key-cell-a { color: #dc2626; font-size: 14px; }
+    .key-cell.missing .key-cell-a { color: #dc2626; font-size: 0.875rem; }
 
     /* ── Sheet display ── */
     .sheet-instructions {
@@ -310,7 +310,7 @@
       margin-bottom: 24px;
     }
     .sheet-instructions p {
-      font-size: 14px;
+      font-size: 0.875rem;
       color: var(--plum-dark);
       margin-bottom: 4px;
     }
@@ -379,7 +379,7 @@
         <!-- Paste tab -->
         <div class="tab-panel active" id="tab-paste">
           <textarea id="pasteInput" placeholder="1,A&#10;2,C&#10;3,B&#10;4,D&#10;...one question per line"></textarea>
-          <p style="font-size:13px;color:var(--plum-light);margin-top:8px;">Format: question number, comma, letter (A–D). One per line. No headers.</p>
+          <p style="font-size: 0.8125rem;color:var(--plum-light);margin-top:8px;">Format: question number, comma, letter (A–D). One per line. No headers.</p>
         </div>
 
         <!-- Upload tab -->
@@ -391,7 +391,7 @@
             <div class="upload-hint">or drag and drop here</div>
             <div class="file-chosen" id="fileChosen"></div>
           </div>
-          <label style="display:flex;align-items:center;gap:8px;margin-top:12px;font-size:13px;color:var(--plum-light);cursor:pointer;">
+          <label style="display:flex;align-items:center;gap:8px;margin-top:12px;font-size: 0.8125rem;color:var(--plum-light);cursor:pointer;">
             <input type="checkbox" id="hasHeader"> My CSV has a header row
           </label>
           <div style="text-align:center">
