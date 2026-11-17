@@ -61,7 +61,7 @@
   --interactive-hover: #4a3060;
   --text-primary:    #3d2a52;
   --text-secondary:  #7a5a8c;
-  --text-muted:      rgba(62,42,82,0.55);
+  --text-muted:      rgba(62,42,82,0.73); /* darkened from 0.55 - failed WCAG AA contrast (2.96:1) against the pricing card's lavender background */
   --border:          rgba(94,64,116,0.15);
   --panel:           rgba(94,64,116,0.07);
   --panel-2:         rgba(94,64,116,0.12);
@@ -275,6 +275,9 @@ header {
   margin-bottom: 12px;
 }
 .section--plum .eyebrow { color: rgba(247,249,236,0.60); }
+/* --plum-light (#7a5a8c) fails WCAG AA (4.24:1) on this section's lavender
+   background - needs 4.5:1. #755686 is the same color, slightly darkened. */
+.section--lavender .eyebrow { color: #755686; }
 
 .display-1 {
   font-size: clamp(2.375rem, 5.5vw, 4.25rem);
@@ -517,6 +520,16 @@ header {
   border-color: rgba(94,64,116,0.28);
   box-shadow: 0 8px 32px rgba(62,42,82,0.18);
   transform: translateY(-8px);
+}
+
+/* --plum-light/--text-secondary (#7a5a8c) fails WCAG AA (4.24:1) on this
+   card's lavender background - needs 4.5:1. #755686 is the same color,
+   slightly darkened. The non-featured (white) pricing cards already pass
+   and are left alone. */
+.pricing-card--featured .pricing-tier,
+.pricing-card--featured .pricing-period,
+.pricing-card--featured .pricing-features li {
+  color: #755686;
 }
 
 .pricing-badge {
@@ -797,7 +810,7 @@ header {
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(247,249,236,0.45);
+  color: rgba(247,249,236,0.56); /* raised from 0.45 - failed WCAG AA contrast (3.7:1) against the footer's dark background */
   margin-bottom: 16px;
 }
 
@@ -853,7 +866,7 @@ header {
 }
 .footer-bottom-copy {
   font-size: 0.75rem;
-  color: rgba(247,249,236,0.40);
+  color: rgba(247,249,236,0.54); /* raised from 0.40 - failed WCAG AA contrast (3.24:1) against the footer's dark background */
 }
 .footer-bottom-links {
   display: flex;
@@ -861,7 +874,7 @@ header {
 }
 .footer-bottom-links a {
   font-size: 0.75rem;
-  color: rgba(247,249,236,0.40);
+  color: rgba(247,249,236,0.54); /* raised from 0.40 - same contrast fix as .footer-bottom-copy */
   transition: color 0.18s;
 }
 .footer-bottom-links a:hover { color: var(--cream); }

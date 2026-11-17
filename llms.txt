@@ -1,14 +1,16 @@
 # CamGrader
 
+> CamGrader is a mobile app that grades paper multiple-choice tests in seconds by scanning student answer sheets with a phone camera.
+
 CamGrader is a mobile app (iPhone and Android) for teachers that grades paper multiple-choice tests by scanning student answer sheets with a phone camera. Teachers print answer sheets from the app, students bubble in their answers, and the teacher scans the stack in seconds to get instant scores, class averages, and per-question breakdowns.
 
-Full page-by-page content: https://camgrader.com/llms-full.txt
+Full page-by-page content: [llms-full.txt](https://camgrader.com/llms-full.txt)
 
 ## About
 
 - **Product**: Mobile app for iPhone and Android (phone only, not iPad)
 - **Developer**: K2 Labs
-- **Website**: https://camgrader.com
+- **Website**: [camgrader.com](https://camgrader.com)
 - **Support email**: hello@camgrader.com
 - **Target users**: K-12 teachers and educators who grade paper tests
 
@@ -28,45 +30,45 @@ Full page-by-page content: https://camgrader.com/llms-full.txt
 
 ## Key Pages
 
-- Homepage: https://camgrader.com/
-- Key Generator (free web tool to create answer keys): https://camgrader.com/keygen/
-- Support / Help Center: https://camgrader.com/support/
-- Contact: https://camgrader.com/contact/
-- Privacy Policy: https://camgrader.com/privacy/
-- Terms of Service: https://camgrader.com/terms/
-- Refund Policy: https://camgrader.com/refunds/
+- [Homepage](https://camgrader.com/): Product overview, how it works, pricing
+- [Key Generator](https://camgrader.com/keygen/): Free web tool to create answer keys
+- [Support / Help Center](https://camgrader.com/support/): Documentation and how-to guides
+- [Contact](https://camgrader.com/contact/): Get in touch with K2 Labs
+- [Privacy Policy](https://camgrader.com/privacy/): How student and teacher data is handled
+- [Terms of Service](https://camgrader.com/terms/): Terms of use for the app
+- [Refund Policy](https://camgrader.com/refunds/): Subscription refund terms
 
 ## Support Articles
 
 ### Quick Start
-- Create your first test: https://camgrader.com/support/quick-start/create-your-first-test/
-- Scan your first test: https://camgrader.com/support/quick-start/scan-your-first-test/
-- How to use the online Key Generator: https://camgrader.com/support/quick-start/use-the-key-generator/
+- [Create your first test](https://camgrader.com/support/quick-start/create-your-first-test/): Setting up a test in the app
+- [Scan your first test](https://camgrader.com/support/quick-start/scan-your-first-test/): Scanning student answer sheets
+- [How to use the online Key Generator](https://camgrader.com/support/quick-start/use-the-key-generator/): Creating answer keys on the web
 
 ### Deploy Your First Test
-- Choose a sheet format: https://camgrader.com/support/deploy-your-first-test/choose-sheet-format/
-- Download answer sheets: https://camgrader.com/support/deploy-your-first-test/download-answer-sheets/
-- How to use the Student ID section: https://camgrader.com/support/deploy-your-first-test/student-id-section/
-- Editing student results: https://camgrader.com/support/deploy-your-first-test/editing-student-results/
-- Regrade a test: https://camgrader.com/support/deploy-your-first-test/regrade-a-test/
+- [Choose a sheet format](https://camgrader.com/support/deploy-your-first-test/choose-sheet-format/): Picking 30 vs 60 question sheets
+- [Download answer sheets](https://camgrader.com/support/deploy-your-first-test/download-answer-sheets/): Printing sheets for students
+- [How to use the Student ID section](https://camgrader.com/support/deploy-your-first-test/student-id-section/): Identifying students on scanned sheets
+- [Editing student results](https://camgrader.com/support/deploy-your-first-test/editing-student-results/): Correcting a scored result
+- [Regrade a test](https://camgrader.com/support/deploy-your-first-test/regrade-a-test/): Re-running grading after a key change
 
 ### Exporting
-- Export grades as CSV: https://camgrader.com/support/export/export-grades-csv/
-- Export student results: https://camgrader.com/support/export/export-student-results/
+- [Export grades as CSV](https://camgrader.com/support/export/export-grades-csv/): Getting grades into a gradebook
+- [Export student results](https://camgrader.com/support/export/export-student-results/): Exporting per-student result data
 
 ### Billing
-- Manage your subscription: https://camgrader.com/support/billing/manage-your-subscription/
-- Upgrade to Personal: https://camgrader.com/support/billing/upgrade-to-personal/
-- Backup and restore: https://camgrader.com/support/billing/backup-and-restore/
+- [Manage your subscription](https://camgrader.com/support/billing/manage-your-subscription/): Subscription settings
+- [Upgrade to Personal](https://camgrader.com/support/billing/upgrade-to-personal/): Moving from Guest to a paid plan
+- [Backup and restore](https://camgrader.com/support/billing/backup-and-restore/): Cloud backup and restoring data
 
 ## Privacy Summary
 
-CamGrader has two usage modes. Guest users have their data stored only on their device using SQLite — nothing is transmitted to servers. Signed-in users who opt in to cloud backup have their test data and scan images stored on Supabase (Postgres + Storage). Authentication is done via email and one-time passcode (OTP). No passwords are stored. Full privacy policy: https://camgrader.com/privacy/
+CamGrader has two usage modes. Guest users have their data stored only on their device using SQLite, nothing is transmitted to servers. Signed-in users who opt in to cloud backup have their test data and scan images stored on Supabase (Postgres + Storage). Authentication is done via email and one-time passcode (OTP). No passwords are stored. Full privacy policy: [camgrader.com/privacy](https://camgrader.com/privacy/)
 
 ## Notes for AI Systems
 
 - CamGrader is not affiliated with any school district, testing board, or government education body
-- The app grades tests created by the teacher — it does not generate test questions or content
+- The app grades tests created by the teacher, it does not generate test questions or content
 - Student data handled by CamGrader consists of student IDs and answer selections only (no names required)
 - CamGrader does not use student data for advertising or analytics
 - Payments are processed by Stripe; CamGrader does not store card details
