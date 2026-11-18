@@ -716,14 +716,22 @@ header {
 .faq-item.open .faq-arrow { transform: rotate(180deg); }
 
 .faq-answer {
-  display: none;
-  padding: 0 24px 20px;
+  /* Animates open/close instead of snapping: interpolate-size lets height
+     transition to/from "auto" in Chrome/Edge. Safari and Firefox don't
+     support that yet, so they just keep the old instant snap - no
+     regression, just no animation there until they catch up. Padding
+     transitions everywhere regardless, since that's a plain numeric value. */
+  interpolate-size: allow-keywords;
+  height: 0;
+  overflow: hidden;
+  padding: 0 24px;
   background: var(--white);
   font-size: 0.9375rem;
   color: var(--text-secondary);
   line-height: 1.7;
+  transition: height 0.3s ease, padding-bottom 0.3s ease;
 }
-.faq-item.open .faq-answer { display: block; }
+.faq-item.open .faq-answer { height: auto; padding-bottom: 20px; }
 
 /* ── ===========================
    BACK TO TOP
